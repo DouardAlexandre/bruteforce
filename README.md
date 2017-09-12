@@ -3,6 +3,5 @@
 
 # Projet: BruteForce
 
-## Auteurs: Roxane Gervais Alex Douard  
+## Auteurs: Roxane Gervais & Alexandre Douard  
 
-## Page Github : https://kvort3x.github.io/bruteforce
