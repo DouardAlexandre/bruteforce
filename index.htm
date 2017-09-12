@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bruteforce</title>
+	<script type="text/javascript" src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+</head>
+<body>
+
+	<script>
+		$(document).ready(function() {
+
+			
+			let passwords = [];
+			//data = contenu récupéré par requête AJAX
+			$.get('data/dico.txt', function(data){
+				passwords=data;
+			    //split sur les retours à la ligne
+			    let arrayData = passwords.split("\n");
+		   	    //copie du tableau
+		   	    passwords = arrayData.slice();
+		        //divise password en deux tableaux
+		        let half_length = Math.ceil(passwords.length / 2);
+		        let leftSide = passwords.splice(0,half_length);
+		        //tester soit leftside soit passwords dans la fonction dico
+		        dico(passwords);
+		    });
+
+
+
+			function dico(){
+            //pour chaque password
+            $.each( passwords, function( key, value ) {
+                //appel ajax
+                $.ajax({  
+                	url : 'bruteforce/index.php',
+                	data :'password='+value,
+					success: function (data) {
+						//si le mot ne contient pas 'erroneous'...
+						if (data.indexOf("Erroneous") == -1){
+							console.log(value);
+						}
+					},
+				});
+            });
+        };
+    });
+		
+
+
+</script>
+</body>
+</html>
