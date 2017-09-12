@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "digital";
+	src: url('../font/DS-DIGI.TTF');
+}
+body{
+	background-color: LightGray ;
+	
+
+}
+#safe {	
+	position: relative;
+	margin: auto;
+	width: 50%;
+	height: 100px;
+	padding-left: 10em;
+	margin-top: 2rem; 
+}
+
+#door {
+	background-image: url('../images/safe.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 391px;
+	width: 400px;
+	position: relative;
+}
+
+#lock {
+	background-image: url('../images/lock.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	left: 11px;
+	top: -7px;
+}
+#minuterie{
+	position: absolute;
+	background-image: url('../images/minuteur.png');
+	height:178px; 
+	width:400px;
+	z-index: 100;
+	overflow: hidden;
+}
+input{
+	/*margin-left: 20em;*/
+	position: absolute;
+	height:28px;
+	width: 11rem;
+	background-color:LimeGreen;
+	border:none;
+	outline: none;
+	left:38px;
+	bottom:45px;
+	color:white;
+}
+#password{
+	position: absolute;
+	height:47px;
+	width: 170px;
+	left:198px;
+	top:427px;
+	background-color:black;
+	font-family: "digital";
+	z-index: 100;
+	color:GoldenRod ;
+	font-size: 2rem;
+	text-align: center;
+	line-height: 47px;
+}
+.title{
+
+	font-family: "digital";
+	font-size: 4rem;
+	color:DimGray  ;
+	text-align: center;
+	margin-top: 2rem;
+}

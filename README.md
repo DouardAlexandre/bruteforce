@@ -1,8 +1,8 @@
 #### Challenge 4 {BruteForcing}
 ===
-# BruteForce
-## Projet: 
 
-## Auteur: 
+# Projet: BruteForce
 
-## Page Github : 
+## Auteurs: Roxane Gervais Alex Douard  
+
+## Page Github : https://kvort3x.github.io/bruteforce

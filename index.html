@@ -3,12 +3,24 @@
 <head>
 	<title>Bruteforce</title>
 	<script type="text/javascript" src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
+	<div class="title">BruteForce</div>
+	<div id="safe">
+		<div id="door">
+			<div id="lock"></div>
+		</div>
+		<div id="minuterie">
+			<input type="button" value="Crack the code">
+		</div>
+		<div id="password"></div>
+	</div>
+	
 	<script>
-		$(document).ready(function() {
 
+		$('input').click(function(){
+			$('input').css("background-color","DarkSlateGray");
 			
 			let passwords = [];
 			//data = contenu récupéré par requête AJAX
@@ -30,14 +42,18 @@
 			function dico(){
             //pour chaque password
             $.each( passwords, function( key, value ) {
+            	
                 //appel ajax
                 $.ajax({  
                 	url : 'bruteforce/index.php',
                 	data :'password='+value,
-					success: function (data) {
+                	success: function (data) {
+                		rotate(180);
 						//si le mot ne contient pas 'erroneous'...
 						if (data.indexOf("Erroneous") == -1){
-							console.log(value);
+							$('#lock').stop();
+							$("#password").html(value);
+
 						}
 					},
 				});
@@ -45,7 +61,19 @@
         };
     });
 		
+		/*---------------------rotate ------------------*/
 
+		function rotate(degree) {   
+			let button = $('#lock');     
+			button.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
+			button.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
+			animation = setTimeout(function() {
+				rotate(degree+1);
+			},1);   
+	//if (degree==180)  {
+	//	clearTimeout(animation);
+	//}             
+}
 
 </script>
 </body>
